@@ -1,0 +1,80 @@
+#board {
+	padding: 1em;
+	display: table;
+}
+.square {
+	display: table-cell;
+	border: 2px solid;
+	font-size: 3em;
+	padding: 0.5em;
+	display: block;
+	text-align: center;
+	cursor: pointer;
+	min-width: 3em;
+	min-height: 3em;
+	/*overflow: hidden;*/
+	-webkit-touch-callout: none;
+	  -webkit-user-select: none;
+		 -moz-user-select: none;
+		  -ms-user-select: none;
+			  user-select: none;
+}
+.square span {
+	display: inline-block;
+	vertical-align: middle;
+	position: relative;
+	top: 0.25em;
+}
+.top {
+	border-top: 0;
+}
+.right {
+	border-right: 0;
+}
+.bottom {
+	border-bottom: 0;
+}
+.left {
+	border-left: 0;
+}
+.win:before {
+	position: absolute;
+	content: "";
+	left: 0;
+	top: 50%;
+	right: 0;
+	border-top: 5px solid;
+	border-color: inherit;
+}
+.win-vertical:before {
+	-webkit-transform:rotate(90deg);
+	   -moz-transform:rotate(90deg);
+		-ms-transform:rotate(90deg);
+		 -o-transform:rotate(90deg);
+			transform:rotate(90deg);
+}
+.win-lefttoright:before {
+	left: -75%;
+	top: 30%;
+	width: 150%;
+	height: 150%;
+	-webkit-transform:rotate(45deg);
+	   -moz-transform:rotate(45deg);
+		-ms-transform:rotate(45deg);
+		 -o-transform:rotate(45deg);
+			transform:rotate(45deg);
+}
+.win-righttoleft:before {
+	left: 25%;
+	top: 30%;
+	width: 150%;
+	height: 150%;
+	-webkit-transform:rotate(-45deg);
+	   -moz-transform:rotate(-45deg);
+		-ms-transform:rotate(-45deg);
+		 -o-transform:rotate(-45deg);
+			transform:rotate(-45deg);
+}
+#winRow {
+	margin-top: 1em;
+}

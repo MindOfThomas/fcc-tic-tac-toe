@@ -15,9 +15,9 @@
 	/*overflow: hidden;*/
 	-webkit-touch-callout: none;
 	  -webkit-user-select: none;
-		 -moz-user-select: none;
-		  -ms-user-select: none;
-			  user-select: none;
+			 -moz-user-select: none;
+			  -ms-user-select: none;
+				  	user-select: none;
 }
 .square span {
 	display: inline-block;
@@ -49,9 +49,9 @@
 .win-vertical:before {
 	-webkit-transform:rotate(90deg);
 	   -moz-transform:rotate(90deg);
-		-ms-transform:rotate(90deg);
-		 -o-transform:rotate(90deg);
-			transform:rotate(90deg);
+			-ms-transform:rotate(90deg);
+			 -o-transform:rotate(90deg);
+					transform:rotate(90deg);
 }
 .win-lefttoright:before {
 	left: -75%;
@@ -60,9 +60,9 @@
 	height: 150%;
 	-webkit-transform:rotate(45deg);
 	   -moz-transform:rotate(45deg);
-		-ms-transform:rotate(45deg);
-		 -o-transform:rotate(45deg);
-			transform:rotate(45deg);
+			-ms-transform:rotate(45deg);
+			 -o-transform:rotate(45deg);
+					transform:rotate(45deg);
 }
 .win-righttoleft:before {
 	left: 25%;
@@ -71,10 +71,27 @@
 	height: 150%;
 	-webkit-transform:rotate(-45deg);
 	   -moz-transform:rotate(-45deg);
-		-ms-transform:rotate(-45deg);
-		 -o-transform:rotate(-45deg);
-			transform:rotate(-45deg);
+		  -ms-transform:rotate(-45deg);
+		   -o-transform:rotate(-45deg);
+		    	transform:rotate(-45deg);
 }
 #winRow {
 	margin-top: 1em;
+}
+
+div#source-code {
+  text-align: center;
+
+  padding: 2em;
+}
+div#source-code img {
+  width: 25px;
+  height: 25px;
+}
+div#source-code a {
+  color: #01579B;
+  text-decoration: none;
+}
+div#source-code a:hover {
+  text-decoration: underline;
 }

@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset='utf8' />
+  <meta name='viewport' content='width=device-width,initial-scale=1' />
+  <title>Tic Tac Toe</title>
+  <link rel='stylesheet' href='style.css' />
+</head>
+<body>
+  <div id='modal'>
+    <h1>Tic Tac Toe</h1>
+    <h2 id='winner'><span id='player'></span> won!</h1>
+    <p id='play-again'>Play again?</p>
+    <select id='mode'>
+      <option value='easy'>Easy</option>
+      <option value='normal' selected>Normal</option>
+      <option value='hard'>Hard</option>
+    </select>
+    <p>
+      <button type='button' id='playAsX'>X</button><button type='button' id='playAsO'>O</button>
+    </p>
+  </div>
+  <canvas id='board' width='1000' height='1000'>No canvas support</canvas>
+  <script type='text/javascript' src='js/utility.js'></script>
+  <script type='text/javascript' src='js/canvas/draw.js'></script>
+  <script type='text/javascript' src='js/canvas/lines.js'></script>
+  <script type='text/javascript' src='js/bot.js'></script>
+  <script type='text/javascript' src='js/game.js'></script>
+  <script type='text/javascript' src='js/canvas/canvas.js'></script>
+  <script type='text/javascript' src='js/squares.js'></script>
+  <script type='text/javascript' src='js/init.js'></script>
+</body>
+</html>

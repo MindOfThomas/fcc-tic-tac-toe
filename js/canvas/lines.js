@@ -62,7 +62,6 @@ function drawWinBar(square1, square2) {
       leftCoord = leftSquareCoords[3];
       rightCoord = rightSquareCoords[1];
     }
-
   }
   drawLine(leftCoord, rightCoord);
 }

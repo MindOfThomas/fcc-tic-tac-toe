@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
   document.getElementById('mode').addEventListener('change', function(event) {
-    mode = event.target.value;
+    botMode = event.target.value;
   });
   showModal();
 });

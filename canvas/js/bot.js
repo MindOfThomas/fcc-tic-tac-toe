@@ -6,7 +6,7 @@ function botWait() {
 function pickSquare() {
   let pick;
 
-  switch(mode) {
+  switch(botMode) {
     case 'easy': {
       // pick moves randomly
 

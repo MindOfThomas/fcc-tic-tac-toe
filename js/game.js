@@ -53,7 +53,7 @@ function tryMove(playerName, square) {
   let width = canvas.width;
   let squareCoords = getCoordBySquare(square);
   let squareCenter = centerCoordOf(squareCoords);
-  drawText(playerToken, squareCenter, 200, (width / 3));
+  drawText(playerToken, squareCenter, 200, (width / 3), playerToken === 'X' ? '#C62828' : 'black');
 
   tryWin(playerName, playerToken);
 

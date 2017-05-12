@@ -21,12 +21,13 @@ function drawLine(coord1, coord2) {
   ctx.stroke();
   ctx.closePath();
 }
-function drawText(text, coord, size, width) {
+function drawText(text, coord, size, width, color) {
   let canvas = document.getElementById('board');
   let ctx = canvas.getContext('2d');
 
   ctx.font = size + 'px sans-serif';
   ctx.textAlign = 'center';
   ctx.textBaseline = 'middle';
+  if (color) ctx.fillStyle = color;
   ctx.fillText(text, coord.x, coord.y, width);
 }

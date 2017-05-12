@@ -10,10 +10,10 @@ function pickSquare() {
     case 'easy': {
       // pick moves randomly
 
-      let index = randomBetween(0, game.squares.length - 1);
-      pick = game.squares[index];
+      let index = randomBetween(0, board.available.length - 1);
+      pick = board.available[index];
 
-      if (!includes(game.squares, pick)) {
+      if (!includes(board.available, pick)) {
         pick = pickSquare();
       }
       break;

@@ -35,18 +35,15 @@ function drawWinBar(square1, square2) {
   // coords order:
   //   topLeft, topRight, bottomRight, bottomLeft
 
+  let leftCoord, rightCoord;
   if (square1Center.x === square2Center.x) {
     // vertical
-    drawLine([
-      {x: square1Center.x, y: square1Coords[0].y},
-      {x: square2Center.x, y: square2Coords[2].y}
-    ]);
+    leftCoord = {x: square1Center.x, y: square1Coords[0].y};
+    rightCoord = {x: square2Center.x, y: square2Coords[2].y};
   } else if (square1Center.y === square2Center.y) {
     // horizontal
-    drawLine([
-      {x: square1Coords[0].x, y: square1Center.y},
-      {x: square2Coords[2].x, y: square2Center.y}
-    ]);
+    leftCoord = {x: square1Coords[0].x, y: square1Center.y};
+    rightCoord = {x: square2Coords[2].x, y: square2Center.y};
   } else {
     // diagonal
     let leftSquareCoords, rightSquareCoords;
@@ -58,7 +55,6 @@ function drawWinBar(square1, square2) {
       rightSquareCoords = square1Coords;
     }
 
-    let leftCoord, rightCoord;
     if (leftSquareCoords[0].y < rightSquareCoords[2].y) {
       leftCoord = leftSquareCoords[0];
       rightCoord = rightSquareCoords[2];
@@ -67,6 +63,6 @@ function drawWinBar(square1, square2) {
       rightCoord = rightSquareCoords[1];
     }
 
-    drawLine(leftCoord, rightCoord);
   }
+  drawLine(leftCoord, rightCoord);
 }

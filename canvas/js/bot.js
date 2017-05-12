@@ -4,34 +4,16 @@ function botWait() {
   }, Math.floor(Math.random() * 1000) + 1);
 }
 function pickSquare() {
-  let pick;
-
-  switch(botMode) {
-    case 'easy': {
-      // pick moves randomly
-
-      let index = randomBetween(0, board.available.length - 1);
-      pick = board.available[index];
-
-      if (!includes(board.available, pick)) {
-        pick = pickSquare();
-      }
-      break;
-    }
-    case 'normal': {
-      // make moves that result in bot winning
-      break;
-    }
-    case 'hard': {
-      // 1. block player from winning
-      // 2. make moves that result in bot winning
-      break;
-    }
-  }
-
-  return pick; // pick should be square coordinates (e.g. [0, 1])
+  return pickRandomSquare();
 }
 
-function nextSquareWin(player) {
-  // return whether player can win on thier next turn
+function pickRandomSquare() {
+  let index = randomBetween(0, board.available.length - 1);
+  let pick = board.available[index];
+
+  if (!includes(board.available, pick)) {
+    pick = pickSquare();
+  }
+
+  return pick;
 }

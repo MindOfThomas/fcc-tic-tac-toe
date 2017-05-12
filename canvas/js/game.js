@@ -8,14 +8,14 @@ let board = {
   O: []
 };
 
-let botMode = 'normal';
+let botEnabled = true;
 
 let turnToken = 'X';
 let turnNumber = 0;
 
 let tokens = {
-  person: '',
-  bot: ''
+  person: 'X',
+  bot: 'O'
 };
 
 function setupGame() {
@@ -33,14 +33,16 @@ function moveController() {
   //   NOTE maybe not
   if (winnerName !== '') return;
 
-  if (turnToken === tokens.bot) {
+  if (botEnabled && turnToken === tokens.bot) {
     botWait();
   }
 }
 
 function tryMove(playerName, square) {
-  let playerToken = tokens[playerName];
-  if (!includes(board.available, square) || turnToken !== playerToken) return;
+  let playerToken = botEnabled ? tokens[playerName] : turnToken;
+
+  let squareAvailable = includes(board.available, square);
+  if (!squareAvailable || turnToken !== playerToken) return;
 
   let index = indexOf(board.available, square);
   board.available.splice(index, 1);
@@ -82,7 +84,11 @@ function tryWin(playerName, playerToken) {
 function win(playerName, playerToken, squares) {
   let winner = 'Nobody';
   if (playerName !== null) {
-    winner = playerName === 'bot' ? 'Bot' : 'You';
+    if (botEnabled) {
+      winner = playerName === 'bot' ? 'Bot' : 'You';
+    } else {
+      winner = playerToken;
+    }
     drawWinBar(squares[0], squares[2]);
   }
 

@@ -116,16 +116,15 @@ function getCursorPosition(canvas, event) {
 function includes(arr1, arr2) {
   // not a very general function; only checks first 2 items
   for(var i = 0; i < arr1.length; i++) {
-    if (arr1[i][0] === arr2[0] && arr1[i][1] === arr2[1]) return true; // NOTE here
+    if (arr1[i][0] === arr2[0] && arr1[i][1] === arr2[1]) {
+      return true;
+    }
   }
   return false;
 }
 function indexOf(arr1, arr2) {
   for(var i = 0; i < arr1.length; i++) {
     if (arr1[i][0] === arr2[0] && arr1[i][1] === arr2[1]) {
-      // console.log('array1:', arr1);
-      // console.log('array2:', arr2);
-      // console.log('index:',i);
       return i;
     }
   }

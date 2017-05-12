@@ -11,13 +11,20 @@
     <h1>Tic Tac Toe</h1>
     <h2 id='winner'><span id='player'></span> won!</h1>
     <p id='play-again'>Play again?</p>
-    <select id='mode'>
-      <option value='easy'>Easy</option>
-      <option value='normal' selected>Normal</option>
-      <option value='hard'>Hard</option>
-    </select>
+    <label id='bot-label'>
+      Bot <input type='checkbox' id='bot' checked />
+    </label>
+    <p id='playAs-container'>
+      <label>
+        Play as
+        <select id='playAs'>
+          <option value='X'>X</option>
+          <option value='O'>O</option>
+        </select>
+      </label>
+    </p>
     <p>
-      <button type='button' id='playAsX'>X</button><button type='button' id='playAsO'>O</button>
+      <button type='button' id='play'>Play</button>
     </p>
   </div>
   <canvas id='board' width='1000' height='1000'>No canvas support</canvas>

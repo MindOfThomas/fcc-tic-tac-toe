@@ -1,7 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-  document.getElementById('mode').addEventListener('change', function(event) {
-    botMode = event.target.value;
-  });
   showModal();
 });
 
@@ -10,17 +7,15 @@ function showModal() {
 
   modal.style.display = 'block';
 
-  document.getElementById('playAsX').addEventListener('click', function() {
-    tokens.person = 'X';
-    tokens.bot = 'O';
-    clearCanvas();
-    setupGame();
-    setupCanvas();
-    modal.style.display = 'none';
+  document.getElementById('bot').addEventListener('change', function(event) {
+    botEnabled = event.target.checked;
+    document.getElementById('playAs-container').style.display = botEnabled ? 'block' : 'none';
   });
-  document.getElementById('playAsO').addEventListener('click', function() {
-    tokens.person = 'O';
-    tokens.bot = 'X';
+  document.getElementById('playAs').addEventListener('change', function(event) {
+    tokens.person = event.target.value;
+    tokens.bot = event.target.value === 'X' ? 'O' : 'X';
+  });
+  document.getElementById('play').addEventListener('click', function() {
     clearCanvas();
     setupGame();
     setupCanvas();

@@ -66,17 +66,17 @@ function tryWin(playerName, playerToken) {
   let moves = board[playerToken];
   if (moves.length < 3) return;
 
-  if (board.available.length === 0) {
-    win(null);
-    return;
-  }
-
   for(var i = 0; i < winningMoves.length; i++) {
     let combo = winningMoves[i];
     if (includes(moves, combo[0]) && includes(moves, combo[1]) && includes(moves, combo[2])) {
       win(playerName, playerToken, combo);
       return;
     }
+  }
+
+  if (board.available.length === 0) {
+    win(null);
+    return;
   }
 }
 function win(playerName, playerToken, squares) {
